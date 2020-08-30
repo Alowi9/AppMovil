@@ -1,0 +1,15 @@
+7- Define la función hayAlgunNegativo, que dada una lista de números nos dice si hay algún negativo
+
+var num =  [8,2,6,-7];
+var num2 =  [8,2,6,7];
+var num3 =  [0,0,0,0];
+
+const n = Element => Element < 0;
+
+function hayAlgunNegativo(num) {
+    return num.some(n);
+}
+
+console.log(hayAlgunNegativo(num));
+console.log(hayAlgunNegativo(num2));
+console.log(hayAlgunNegativo(num3));
