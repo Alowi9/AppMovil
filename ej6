@@ -1,0 +1,16 @@
+//// 6.- Define la función quienesAprobaron, que dada la información de un curso devuelve la información de los alumnos que aprobaron.
+Podés usar la función que hiciste en el ejercicio anterior.
+
+var curso = [ [8,2,6,7],[5,6,7,8],[9,9,9,9],[1,1,1,1] ]
+
+const nota = Element => Element >= 4;
+
+function aprobo(num) {
+    return num.every(nota);
+}
+
+function quienesAprobaron(NotasPorAlumno) {
+    return NotasPorAlumno.filter(alum => aprobo(alum));
+}
+
+console.log(quienesAprobaron(curso));
