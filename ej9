@@ -1,0 +1,25 @@
+//// 9- Escribí una función rechazar, que dada una condición y un array, devuelva un array con los elementos que no la cumplen
+
+
+var num =  [8,2,6,-7];
+var num2 =  [8,5,6,7];
+var num3 =  [0,0,0,0];
+var num4 =  [1,1,1,1];
+
+function odd (num){
+    if( num % 2 != 0 ){
+        return  true;
+    }
+}
+
+function cuantosCumplen(odd,num) {
+
+    return num.filter( num => odd(num));
+    
+}
+
+
+console.log(cuantosCumplen(odd,num));
+console.log(cuantosCumplen(odd,num2));
+console.log(cuantosCumplen(odd,num3));
+console.log(cuantosCumplen(odd,num4));
