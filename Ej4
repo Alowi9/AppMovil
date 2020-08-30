@@ -1,0 +1,17 @@
+Define una función que dado un array de números nos dice si alguno es par.
+
+var numeros = [1,2,3,4];
+var numeros2 = [7,9,11];
+var numeros3 = [2,4,6];
+
+const par = Element => Element % 2 === 0;
+
+function algunoEsPar(num) {
+
+    return num.some(par);
+
+}
+
+console.log("numeros mix: ", algunoEsPar(numeros) );
+console.log("numeros impares: ", algunoEsPar(numeros2) );
+console.log("numeros pares: ", algunoEsPar(numeros3) );
