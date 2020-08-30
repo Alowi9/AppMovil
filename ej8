@@ -1,0 +1,22 @@
+////// 8- Escribi una función cuantosCumplen que dada una condición y una lista, diga cuantos elementos la cumplen
+
+var num =  [8,2,6,-7];
+var num2 =  [8,2,6,7];
+var num3 =  [0,0,0,0];
+
+function even (num){
+    if( num % 2 == 0 ){
+        return  true;
+    }
+}
+
+function cuantosCumplen(even,num ) {
+
+    n = num.filter( num => even(num));
+    return n.length;
+}
+
+
+console.log(cuantosCumplen(even,num));
+console.log(cuantosCumplen(even,num2));
+console.log(cuantosCumplen(even,num3));
