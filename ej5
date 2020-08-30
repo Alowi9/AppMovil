@@ -1,0 +1,21 @@
+/////5- Define la función aprobó, que dada la lista de las notas de un 
+alumno devuelve si el alumno aprobó. Un alumno aprobó 
+si todas sus notas son mayores o iguales a 4///
+
+var alum1 = [1,2,3,4];
+var alum2 = [7,9,11];
+var alum3 = [4,4,6];
+var alum4 = [3,3,2];
+
+const nota = Element => Element >= 4;
+
+function aprobo(num) {
+
+    return num.every(nota);
+
+}
+
+console.log("Alumno 1 : ", aprobo(alum1) );
+console.log("Alumno 2 : ", aprobo(alum2) );
+console.log("Alumno 3 : ", aprobo(alum3) );
+console.log("Alumno 4 : ", aprobo(alum4) );
