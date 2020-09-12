@@ -1,0 +1,102 @@
+//////13- Crea una clase Profesor (que herede de Persona) que tenga un atributo estudiantes con un array de Estudiante. 
+Además debe tener dos métodos enseñando() que imprima por consola todos sus estudiantes a los cuales les está enseñando
+y el método addEstudiante(unEstudiante) que agregue a ese estudiante a la lista.
+Además este método es responsable de manejar de agregar al objeto profesor como profesor del estudiante (manejo de doble referencia)
+
+
+class Persona 
+{    
+
+    constructor(nombre,edad){
+
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+    
+    presentarse(){
+    console.log("Hola, me llamo " + this.nombre + " y tengo " + this.edad + " años")
+}
+
+}
+
+class Estudiante extends Persona{
+
+    prof;
+    
+    constructor(nombre,edad,prof){
+    super(nombre,edad);
+    this.prof = prof;
+    }
+
+    estudiando(){
+        console.log("Estudiando con " + this.prof)
+    }
+
+    setProfe(prof){
+        this.prof = prof;
+    }
+
+    suProfeEs(){
+        console.log("yo soy "+ this.nombre + " y mi profesor es " + this.prof);
+    }
+
+
+}
+
+
+class Profesor extends Persona{
+
+    
+    constructor(nombre,edad, estudiantes){
+    super(nombre,edad);
+    this.estudiantes = estudiantes;
+    }
+
+
+    enseniando(){
+        this.estudiantes.forEach( est => console.log(est.nombre)  );
+    }
+
+    addEstudiante(xEstudiante){
+        xEstudiante.setProfe(this.nombre);
+        this.estudiantes.push(xEstudiante);
+    }
+
+}
+
+
+var arrayAlumnos = [
+     e1 = new Estudiante("Maximiliano",30,"Nievas"),
+     e2 = new Estudiante("Daiana",25,"Nievas"),
+     e3 = new Estudiante("David",21,"Nievas"),
+     e4 = new Estudiante("Florencia",24,"Nievas")
+];
+
+
+var pro = new Profesor("Maria",40,arrayAlumnos);
+
+pro.presentarse();
+console.log(" ");
+
+pro.enseniando();
+console.log(" ");
+
+pro.addEstudiante(e5 = new Estudiante("Daniel",31,pro));
+
+pro.enseniando();
+
+console.log(" ");
+
+pro.addEstudiante(e6 = new Estudiante("Carlos",20,pro));
+
+
+pro.enseniando();
+console.log(" ");
+
+e1.suProfeEs();
+e2.suProfeEs();
+e3.suProfeEs();
+e4.suProfeEs();
+e5.suProfeEs();
+e6.suProfeEs();
+
